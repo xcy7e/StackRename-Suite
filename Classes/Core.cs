@@ -170,6 +170,20 @@ namespace SRSuite.Classes
         }
 
         /// <summary>
+        /// Apply filter "hide file endings" on directory list
+        /// </summary>
+        /// <param name="filterVal"></param>
+        public void filterFileEndingsHideApply(string filterVal, bool refreshList = true)
+        {
+            this.dirController.filter.setHideFileEndings(filterVal);
+
+            if (refreshList)
+            {
+                this.dirController.updateDirectoryLists(this.currentDir);
+            }
+        }
+
+        /// <summary>
         /// Update path information (path labels) on drive/path change
         /// </summary>
         public void refreshPathInfo()

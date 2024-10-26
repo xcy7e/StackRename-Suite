@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Security.AccessControl;
 using System.Security.Principal;
@@ -13,16 +12,18 @@ namespace SRSuite.Classes
 
         private MainFrm mainFrm;
         private ImageList imageList;
+        public Filter filter = null;
 
         public DirectoryController(MainFrm Sender)
         {
             this.mainFrm = Sender;
 
+            this.filter = new Filter(Sender);
+
             this.imageList = new ImageList();
             imageList.Images.Add("folder", Resources.yellow_folder_enabled);
             imageList.Images.Add("file", Resources.blue_file_enabled);
         }
-
 
         public void updateDirectoryLists(DirectoryInfo newDir)
         {
@@ -132,6 +133,9 @@ namespace SRSuite.Classes
         {
             foreach (FileInfo file in f)
             {
+                if(this.filter.hideFileEndings.Contains(file.Extension.ToLower()))
+                    continue;   // ending excluded
+
                 ListViewItem fileItem = new ListViewItem("");
                 fileItem.Checked = true;
                 fileItem.SubItems.Add(file.Name);     // Name

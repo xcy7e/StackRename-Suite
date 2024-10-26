@@ -142,6 +142,21 @@ namespace SRSuite
             this.core.toggleVisibility(Core.TYPE_FILES, true);
         }
 
+        private void filterFileEndingHide_Apply(object sender, EventArgs e)
+        {
+            if(filterTxtFileEndingHide.Text != filterFileEndingHideCurrentValue)
+            {
+                filterFileEndingHideCurrentValue = "";
+                this.core.filterFileEndingsHideApply(filterTxtFileEndingHide.Text, true);
+            }
+        }
+
+        private string filterFileEndingHideCurrentValue = "";
+        private void filterFileEndingHideDetectChanged(object sender, EventArgs e)
+        {
+            this.filterFileEndingHideCurrentValue = this.filterTxtFileEndingHide.Text;
+        }
+
         private void txtDirListLeftPath_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Return)
@@ -425,6 +440,14 @@ namespace SRSuite
                 (this.Width / 2) - (panelProcessbar.Width / 2),
                 (this.Height / 2) - (panelProcessbar.Height / 2)
             );
+        }
+
+        private void filterTxtFileEndingHide_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == ((char)Keys.Return))
+            {
+                this.filterFileEndingHide_Apply(sender, e);
+            }
         }
     }
 }

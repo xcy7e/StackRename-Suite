@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\DirectoryController.cs" />
+    <Compile Include="Classes\Filter.cs" />
     <Compile Include="Classes\Objects\Rule.cs" />
     <Compile Include="Classes\Objects\RuleSet.cs" />
     <Compile Include="Classes\Objects\RuleType.cs" />

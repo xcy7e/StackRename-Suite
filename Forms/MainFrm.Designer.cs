@@ -113,6 +113,10 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelProcessbar = new System.Windows.Forms.Panel();
             this.progressBarMainFrmLoad = new System.Windows.Forms.ProgressBar();
+            this.filterTxtItemNameInclude = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.mainPanelTablePanel.SuspendLayout();
@@ -480,6 +484,9 @@
             this.filterBtnFolderVisibility,
             this.filterBtnFileVisibility,
             this.toolStripSeparator8,
+            this.toolStripLabel4,
+            this.filterTxtItemNameInclude,
+            this.toolStripSeparator11,
             this.toolStripLabel3,
             this.filterTxtFileEndingHide,
             this.toolStripSeparator6,
@@ -487,7 +494,8 @@
             this.filterBtnDirListCheckboxDisable,
             this.toolStripSeparator10,
             this.filterBtnRenameFileExtEnable,
-            this.filterBtnRenameFileExtDisable});
+            this.filterBtnRenameFileExtDisable,
+            this.toolStripSeparator12});
             this.toolbarFilter.Location = new System.Drawing.Point(0, 34);
             this.toolbarFilter.Name = "toolbarFilter";
             this.toolbarFilter.Padding = new System.Windows.Forms.Padding(5, 0, 10, 0);
@@ -544,7 +552,10 @@
             this.filterTxtFileEndingHide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.filterTxtFileEndingHide.Name = "filterTxtFileEndingHide";
             this.filterTxtFileEndingHide.Size = new System.Drawing.Size(110, 23);
-            this.filterTxtFileEndingHide.ToolTipText = "Bsp: \".txt,.pdf\"";
+            this.filterTxtFileEndingHide.ToolTipText = "Bsp: \"*.txt,.pdf,doc\"";
+            this.filterTxtFileEndingHide.Enter += new System.EventHandler(this.filterFileEndingHideDetectChanged);
+            this.filterTxtFileEndingHide.Leave += new System.EventHandler(this.filterFileEndingHide_Apply);
+            this.filterTxtFileEndingHide.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filterTxtFileEndingHide_KeyPress);
             // 
             // toolStripSeparator6
             // 
@@ -953,6 +964,32 @@
             this.progressBarMainFrmLoad.TabIndex = 0;
             this.progressBarMainFrmLoad.Value = 50;
             // 
+            // filterTxtItemNameInclude
+            // 
+            this.filterTxtItemNameInclude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.filterTxtItemNameInclude.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.filterTxtItemNameInclude.Name = "filterTxtItemNameInclude";
+            this.filterTxtItemNameInclude.Size = new System.Drawing.Size(100, 30);
+            this.filterTxtItemNameInclude.ToolTipText = "Ordner- & Dateinamen filtern\r\nCase-Sensitive, Namen mit Komma trennen\r\nBsp: \"Prog" +
+    "ramme,Spiele\" zeigt nur Elemente deren Name die Begriffe \"Programme\" oder \"Spiel" +
+    "e\" enthalten.";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 30);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 30);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(83, 27);
+            this.toolStripLabel4.Text = "Namen filtern:";
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1092,6 +1129,10 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Panel panelProcessbar;
         private System.Windows.Forms.ProgressBar progressBarMainFrmLoad;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripTextBox filterTxtItemNameInclude;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
     }
 }
 

@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel_RuleNumbering = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxPatternHelp = new System.Windows.Forms.PictureBox();
+            this.listBoxNbrType = new System.Windows.Forms.ComboBox();
             this.labelNbrPattern = new System.Windows.Forms.Label();
             this.textBoxNbrPattern = new System.Windows.Forms.TextBox();
             this.radioButtonNbrAfter = new System.Windows.Forms.RadioButton();
             this.radioButtonNbrBefore = new System.Windows.Forms.RadioButton();
             this.toolTipPattern = new System.Windows.Forms.ToolTip(this.components);
-            this.listBoxNbrType = new System.Windows.Forms.ComboBox();
+            this.pictureBoxPatternHelp = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel_RuleNumbering.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPatternHelp)).BeginInit();
@@ -45,17 +45,19 @@
             // 
             // tableLayoutPanel_RuleNumbering
             // 
+            this.tableLayoutPanel_RuleNumbering.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel_RuleNumbering.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel_RuleNumbering.ColumnCount = 1;
             this.tableLayoutPanel_RuleNumbering.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel_RuleNumbering.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel_RuleNumbering.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_RuleNumbering.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_RuleNumbering.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel_RuleNumbering.Name = "tableLayoutPanel_RuleNumbering";
             this.tableLayoutPanel_RuleNumbering.RowCount = 1;
             this.tableLayoutPanel_RuleNumbering.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel_RuleNumbering.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_RuleNumbering.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel_RuleNumbering.Size = new System.Drawing.Size(253, 98);
             this.tableLayoutPanel_RuleNumbering.TabIndex = 0;
             // 
@@ -69,22 +71,28 @@
             this.panel1.Controls.Add(this.radioButtonNbrBefore);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.MinimumSize = new System.Drawing.Size(248, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 93);
             this.panel1.TabIndex = 1;
             // 
-            // pictureBoxPatternHelp
+            // listBoxNbrType
             // 
-            this.pictureBoxPatternHelp.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureBoxPatternHelp.Image = global::SRSuite.Properties.Resources.help;
-            this.pictureBoxPatternHelp.Location = new System.Drawing.Point(206, 50);
-            this.pictureBoxPatternHelp.Name = "pictureBoxPatternHelp";
-            this.pictureBoxPatternHelp.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxPatternHelp.TabIndex = 5;
-            this.pictureBoxPatternHelp.TabStop = false;
+            this.listBoxNbrType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxNbrType.FormattingEnabled = true;
+            this.listBoxNbrType.Items.AddRange(new object[] {
+            "Numerisch",
+            "Alphabetisch",
+            "Römisch"});
+            this.listBoxNbrType.Location = new System.Drawing.Point(7, 8);
+            this.listBoxNbrType.Name = "listBoxNbrType";
+            this.listBoxNbrType.Size = new System.Drawing.Size(98, 25);
+            this.listBoxNbrType.TabIndex = 1;
             // 
             // labelNbrPattern
             // 
+            this.labelNbrPattern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelNbrPattern.AutoSize = true;
             this.labelNbrPattern.Location = new System.Drawing.Point(6, 53);
             this.labelNbrPattern.Name = "labelNbrPattern";
@@ -94,6 +102,8 @@
             // 
             // textBoxNbrPattern
             // 
+            this.textBoxNbrPattern.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNbrPattern.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxNbrPattern.Location = new System.Drawing.Point(60, 50);
             this.textBoxNbrPattern.MaxLength = 12;
@@ -107,6 +117,7 @@
             // 
             // radioButtonNbrAfter
             // 
+            this.radioButtonNbrAfter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonNbrAfter.AutoSize = true;
             this.radioButtonNbrAfter.Location = new System.Drawing.Point(178, 9);
             this.radioButtonNbrAfter.Name = "radioButtonNbrAfter";
@@ -119,6 +130,7 @@
             // 
             // radioButtonNbrBefore
             // 
+            this.radioButtonNbrBefore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonNbrBefore.AutoSize = true;
             this.radioButtonNbrBefore.Location = new System.Drawing.Point(112, 9);
             this.radioButtonNbrBefore.Name = "radioButtonNbrBefore";
@@ -134,17 +146,16 @@
             this.toolTipPattern.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipPattern.ToolTipTitle = "Muster";
             // 
-            // listBoxNbrType
+            // pictureBoxPatternHelp
             // 
-            this.listBoxNbrType.FormattingEnabled = true;
-            this.listBoxNbrType.Items.AddRange(new object[] {
-            "Numerisch",
-            "Alphabetisch",
-            "Römisch"});
-            this.listBoxNbrType.Location = new System.Drawing.Point(7, 8);
-            this.listBoxNbrType.Name = "listBoxNbrType";
-            this.listBoxNbrType.Size = new System.Drawing.Size(98, 25);
-            this.listBoxNbrType.TabIndex = 1;
+            this.pictureBoxPatternHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxPatternHelp.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureBoxPatternHelp.Image = global::SRSuite.Properties.Resources.help;
+            this.pictureBoxPatternHelp.Location = new System.Drawing.Point(206, 50);
+            this.pictureBoxPatternHelp.Name = "pictureBoxPatternHelp";
+            this.pictureBoxPatternHelp.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxPatternHelp.TabIndex = 5;
+            this.pictureBoxPatternHelp.TabStop = false;
             // 
             // RuleNumbering
             // 
@@ -155,7 +166,7 @@
             this.Controls.Add(this.tableLayoutPanel_RuleNumbering);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Location = new System.Drawing.Point(0, 10);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 0);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(200, 50);
             this.Name = "RuleNumbering";
             this.Size = new System.Drawing.Size(253, 98);

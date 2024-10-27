@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Windows.Forms;
 using SRSuite.Properties;
+using static System.Windows.Forms.ListView;
 
 namespace SRSuite.Classes
 {
@@ -39,6 +42,7 @@ namespace SRSuite.Classes
             this.mainFrm.core.currentDir = newDir;
             this.mainFrm.directoryListViewLeft.SuspendLayout();
             this.mainFrm.directoryListViewRight.SuspendLayout();
+            this.mainFrm.SuspendLayout();
             this.mainFrm.directoryListViewLeft.Items.Clear();
             this.mainFrm.directoryListViewRight.Items.Clear();
 
@@ -55,6 +59,7 @@ namespace SRSuite.Classes
             this.mainFrm.core.refreshPathInfo();
             this.mainFrm.directoryListViewLeft.ResumeLayout(true);
             this.mainFrm.directoryListViewRight.ResumeLayout(true);
+            this.mainFrm.ResumeLayout(true);
             this.mainFrm.directoryListViewLeft.Refresh();
             this.mainFrm.directoryListViewRight.Refresh();
             this.mainFrm.Refresh();
@@ -104,7 +109,10 @@ namespace SRSuite.Classes
 
         private void addDirectoryItems(DirectoryInfo[] d)
         {
-            foreach(DirectoryInfo dir in d)
+            List<ListViewItem> cL = new List<ListViewItem>();
+            List<ListViewItem> cR = new List<ListViewItem>();
+
+            foreach (DirectoryInfo dir in d)
             {
                 ListViewItem dirItem = new ListViewItem("");
                 dirItem.Checked = true;
@@ -124,13 +132,18 @@ namespace SRSuite.Classes
                     dirItemRight.ForeColor = this.mainFrm.highlightColor1;
                 }
 
-                this.mainFrm.directoryListViewLeft.Items.Add(dirItemLeft);
-                this.mainFrm.directoryListViewRight.Items.Add(dirItemRight);
+                cL.Add(dirItemLeft);
+                cR.Add(dirItemRight);
             }
+            this.mainFrm.directoryListViewLeft.Items.AddRange(cL.ToArray());
+            this.mainFrm.directoryListViewRight.Items.AddRange(cR.ToArray());
         }
 
         private void addFileItems(FileInfo[] f)
         {
+            List<ListViewItem> cL = new List<ListViewItem>();
+            List<ListViewItem> cR = new List<ListViewItem>();
+
             foreach (FileInfo file in f)
             {
                 if(this.filter.hideFileEndings.Contains(file.Extension.ToLower()))
@@ -154,9 +167,12 @@ namespace SRSuite.Classes
                     fileItemRight.ForeColor = this.mainFrm.highlightColor1;
                 }
 
-                this.mainFrm.directoryListViewLeft.Items.Add(fileItemLeft);
-                this.mainFrm.directoryListViewRight.Items.Add(fileItemRight);
+                
+                cL.Add(fileItemLeft);
+                cR.Add(fileItemRight);
             }
+            this.mainFrm.directoryListViewLeft.Items.AddRange(cL.ToArray());
+            this.mainFrm.directoryListViewRight.Items.AddRange(cR.ToArray());
         }
 
         private string calcFileSize(long bytes)

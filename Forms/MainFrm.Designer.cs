@@ -77,6 +77,9 @@
             this.filterBtnFolderVisibility = new System.Windows.Forms.ToolStripButton();
             this.filterBtnFileVisibility = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.filterTxtItemNameInclude = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.filterTxtFileEndingHide = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -85,6 +88,7 @@
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.filterBtnRenameFileExtEnable = new System.Windows.Forms.ToolStripButton();
             this.filterBtnRenameFileExtDisable = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanelContentWrapper = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainerDirectoryLists = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -113,10 +117,6 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelProcessbar = new System.Windows.Forms.Panel();
             this.progressBarMainFrmLoad = new System.Windows.Forms.ProgressBar();
-            this.filterTxtItemNameInclude = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.mainPanelTablePanel.SuspendLayout();
@@ -539,6 +539,27 @@
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 30);
             // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(83, 27);
+            this.toolStripLabel4.Text = "Namen filtern:";
+            // 
+            // filterTxtItemNameInclude
+            // 
+            this.filterTxtItemNameInclude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.filterTxtItemNameInclude.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.filterTxtItemNameInclude.Name = "filterTxtItemNameInclude";
+            this.filterTxtItemNameInclude.Size = new System.Drawing.Size(100, 30);
+            this.filterTxtItemNameInclude.ToolTipText = "Ordner- & Dateinamen filtern\r\nCase-Sensitive, Namen mit Komma trennen\r\nBsp: \"Prog" +
+    "ramme,Spiele\" zeigt nur Elemente deren Name die Begriffe \"Programme\" oder \"Spiel" +
+    "e\" enthalten.";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 30);
+            // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
@@ -607,6 +628,11 @@
             this.filterBtnRenameFileExtDisable.ToolTipText = "Regeln nicht auf Datei-Endungen anwenden";
             this.filterBtnRenameFileExtDisable.Visible = false;
             this.filterBtnRenameFileExtDisable.Click += new System.EventHandler(this.filterBtnRenameFileExtDisable_Click);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 30);
             // 
             // tableLayoutPanelContentWrapper
             // 
@@ -963,32 +989,6 @@
             this.progressBarMainFrmLoad.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarMainFrmLoad.TabIndex = 0;
             this.progressBarMainFrmLoad.Value = 50;
-            // 
-            // filterTxtItemNameInclude
-            // 
-            this.filterTxtItemNameInclude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.filterTxtItemNameInclude.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.filterTxtItemNameInclude.Name = "filterTxtItemNameInclude";
-            this.filterTxtItemNameInclude.Size = new System.Drawing.Size(100, 30);
-            this.filterTxtItemNameInclude.ToolTipText = "Ordner- & Dateinamen filtern\r\nCase-Sensitive, Namen mit Komma trennen\r\nBsp: \"Prog" +
-    "ramme,Spiele\" zeigt nur Elemente deren Name die Begriffe \"Programme\" oder \"Spiel" +
-    "e\" enthalten.";
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(83, 27);
-            this.toolStripLabel4.Text = "Namen filtern:";
             // 
             // MainFrm
             // 

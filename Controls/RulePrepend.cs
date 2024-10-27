@@ -14,6 +14,10 @@ namespace SRSuite.Controls
         private bool textChanged = false;
         private bool textBox_PrependTouched = false;
 
+        public RulePrepend()
+        {
+            InitializeComponent();
+        }
         public RulePrepend(Core core, RuleTypePrepend ruleType, Rule rule)
         {
             this.core = core;
@@ -54,6 +58,16 @@ namespace SRSuite.Controls
         private void textBox_RulePrepend_Prepend_Enter(object sender, System.EventArgs e)
         {
             this.textBox_PrependTouched = true;
+        }
+
+        private void RulePrepend_SizeChanged(object sender, System.EventArgs e)
+        {
+            resizeChildControls();
+        }
+
+        private void resizeChildControls()
+        {
+            textBox_RulePrepend_Prepend.Width = this.Width - 6;
         }
     }
 }

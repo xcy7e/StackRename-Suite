@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox_RuleWrapper = new System.Windows.Forms.GroupBox();
+            this.panelRuleControl = new System.Windows.Forms.Panel();
             this.contextMenu_RuleCtrl_settings = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deaktivierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aktivierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.löschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbRuleEnabledState = new System.Windows.Forms.CheckBox();
-            this.fancyCheckboxRuleEnabled = new System.Windows.Forms.PictureBox();
-            this.btn_RuleCtrl_settings = new System.Windows.Forms.PictureBox();
-            this.btn_RuleCtrl_remove = new System.Windows.Forms.PictureBox();
-            this.panelRuleControl = new System.Windows.Forms.Panel();
             this.panelActionBar = new System.Windows.Forms.Panel();
+            this.btn_RuleCtrl_settings = new System.Windows.Forms.PictureBox();
+            this.fancyCheckboxRuleEnabled = new System.Windows.Forms.PictureBox();
+            this.btn_RuleCtrl_remove = new System.Windows.Forms.PictureBox();
             this.groupBox_RuleWrapper.SuspendLayout();
             this.contextMenu_RuleCtrl_settings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fancyCheckboxRuleEnabled)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_settings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_remove)).BeginInit();
             this.panelActionBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_settings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fancyCheckboxRuleEnabled)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_remove)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_RuleWrapper
@@ -56,15 +56,28 @@
             this.groupBox_RuleWrapper.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox_RuleWrapper.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox_RuleWrapper.Controls.Add(this.panelRuleControl);
-            this.groupBox_RuleWrapper.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox_RuleWrapper.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox_RuleWrapper.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_RuleWrapper.Location = new System.Drawing.Point(4, 6);
-            this.groupBox_RuleWrapper.MinimumSize = new System.Drawing.Size(180, 132);
+            this.groupBox_RuleWrapper.MinimumSize = new System.Drawing.Size(180, 65);
             this.groupBox_RuleWrapper.Name = "groupBox_RuleWrapper";
             this.groupBox_RuleWrapper.Padding = new System.Windows.Forms.Padding(5, 10, 5, 0);
-            this.groupBox_RuleWrapper.Size = new System.Drawing.Size(258, 132);
+            this.groupBox_RuleWrapper.Size = new System.Drawing.Size(258, 121);
             this.groupBox_RuleWrapper.TabIndex = 0;
             this.groupBox_RuleWrapper.TabStop = false;
             this.groupBox_RuleWrapper.Text = "Regel";
+            // 
+            // panelRuleControl
+            // 
+            this.panelRuleControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRuleControl.BackColor = System.Drawing.Color.Transparent;
+            this.panelRuleControl.Location = new System.Drawing.Point(7, 20);
+            this.panelRuleControl.Margin = new System.Windows.Forms.Padding(4);
+            this.panelRuleControl.Name = "panelRuleControl";
+            this.panelRuleControl.Size = new System.Drawing.Size(242, 83);
+            this.panelRuleControl.TabIndex = 4;
             // 
             // contextMenu_RuleCtrl_settings
             // 
@@ -114,6 +127,34 @@
             this.cbRuleEnabledState.UseVisualStyleBackColor = true;
             this.cbRuleEnabledState.Visible = false;
             // 
+            // panelActionBar
+            // 
+            this.panelActionBar.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelActionBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelActionBar.Controls.Add(this.btn_RuleCtrl_settings);
+            this.panelActionBar.Controls.Add(this.fancyCheckboxRuleEnabled);
+            this.panelActionBar.Controls.Add(this.btn_RuleCtrl_remove);
+            this.panelActionBar.Controls.Add(this.cbRuleEnabledState);
+            this.panelActionBar.Location = new System.Drawing.Point(165, 0);
+            this.panelActionBar.Name = "panelActionBar";
+            this.panelActionBar.Size = new System.Drawing.Size(84, 27);
+            this.panelActionBar.TabIndex = 5;
+            // 
+            // btn_RuleCtrl_settings
+            // 
+            this.btn_RuleCtrl_settings.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_RuleCtrl_settings.BackgroundImage = global::SRSuite.Properties.Resources.wrench_wrench_2;
+            this.btn_RuleCtrl_settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_RuleCtrl_settings.ContextMenuStrip = this.contextMenu_RuleCtrl_settings;
+            this.btn_RuleCtrl_settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_RuleCtrl_settings.Location = new System.Drawing.Point(4, 3);
+            this.btn_RuleCtrl_settings.Name = "btn_RuleCtrl_settings";
+            this.btn_RuleCtrl_settings.Padding = new System.Windows.Forms.Padding(2);
+            this.btn_RuleCtrl_settings.Size = new System.Drawing.Size(22, 20);
+            this.btn_RuleCtrl_settings.TabIndex = 1;
+            this.btn_RuleCtrl_settings.TabStop = false;
+            this.btn_RuleCtrl_settings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_RuleCtrl_settings_MouseClick);
+            // 
             // fancyCheckboxRuleEnabled
             // 
             this.fancyCheckboxRuleEnabled.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -131,21 +172,6 @@
             this.fancyCheckboxRuleEnabled.MouseLeave += new System.EventHandler(this.fancyCheckboxRuleEnabled_MouseLeave);
             this.fancyCheckboxRuleEnabled.MouseUp += new System.Windows.Forms.MouseEventHandler(this.fancyCheckboxRuleEnabled_MouseUp);
             // 
-            // btn_RuleCtrl_settings
-            // 
-            this.btn_RuleCtrl_settings.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_RuleCtrl_settings.BackgroundImage = global::SRSuite.Properties.Resources.wrench_wrench_2;
-            this.btn_RuleCtrl_settings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_RuleCtrl_settings.ContextMenuStrip = this.contextMenu_RuleCtrl_settings;
-            this.btn_RuleCtrl_settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_RuleCtrl_settings.Location = new System.Drawing.Point(4, 3);
-            this.btn_RuleCtrl_settings.Name = "btn_RuleCtrl_settings";
-            this.btn_RuleCtrl_settings.Padding = new System.Windows.Forms.Padding(2);
-            this.btn_RuleCtrl_settings.Size = new System.Drawing.Size(22, 20);
-            this.btn_RuleCtrl_settings.TabIndex = 1;
-            this.btn_RuleCtrl_settings.TabStop = false;
-            this.btn_RuleCtrl_settings.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_RuleCtrl_settings_MouseClick);
-            // 
             // btn_RuleCtrl_remove
             // 
             this.btn_RuleCtrl_remove.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -160,51 +186,25 @@
             this.btn_RuleCtrl_remove.TabStop = false;
             this.btn_RuleCtrl_remove.Click += new System.EventHandler(this.btn_RuleCtrl_remove_Click);
             // 
-            // panelRuleControl
-            // 
-            this.panelRuleControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelRuleControl.BackColor = System.Drawing.Color.Transparent;
-            this.panelRuleControl.Location = new System.Drawing.Point(3, 12);
-            this.panelRuleControl.Name = "panelRuleControl";
-            this.panelRuleControl.Padding = new System.Windows.Forms.Padding(4);
-            this.panelRuleControl.Size = new System.Drawing.Size(254, 117);
-            this.panelRuleControl.TabIndex = 4;
-            // 
-            // panelActionBar
-            // 
-            this.panelActionBar.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelActionBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelActionBar.Controls.Add(this.btn_RuleCtrl_settings);
-            this.panelActionBar.Controls.Add(this.fancyCheckboxRuleEnabled);
-            this.panelActionBar.Controls.Add(this.btn_RuleCtrl_remove);
-            this.panelActionBar.Controls.Add(this.cbRuleEnabledState);
-            this.panelActionBar.Location = new System.Drawing.Point(165, 0);
-            this.panelActionBar.Name = "panelActionBar";
-            this.panelActionBar.Size = new System.Drawing.Size(84, 27);
-            this.panelActionBar.TabIndex = 5;
-            // 
             // RuleCtrl
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panelActionBar);
             this.Controls.Add(this.groupBox_RuleWrapper);
-            this.MinimumSize = new System.Drawing.Size(270, 150);
+            this.MinimumSize = new System.Drawing.Size(270, 65);
             this.Name = "RuleCtrl";
             this.Padding = new System.Windows.Forms.Padding(1);
-            this.Size = new System.Drawing.Size(270, 150);
+            this.Size = new System.Drawing.Size(270, 131);
             this.groupBox_RuleWrapper.ResumeLayout(false);
             this.contextMenu_RuleCtrl_settings.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fancyCheckboxRuleEnabled)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_settings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_remove)).EndInit();
             this.panelActionBar.ResumeLayout(false);
             this.panelActionBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fancyCheckboxRuleEnabled)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_RuleCtrl_remove)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -25,9 +25,12 @@ namespace SRSuite.Controls
             this.SuspendLayout();
             this.Width = this.core.getRulePanelWidth();
             this.panelRuleControl.Controls.Add(this.childControl);
-            this.panelRuleControl.Height = this.childControl.Height;
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            this.panelRuleControl.AutoSize = true;
+            this.groupBox_RuleWrapper.Height = this.childControl.Height;
+            //this.childControl.Dock = DockStyle.Fill;
+            this.Height = this.childControl.Height + 60;
+            //this.panelRuleControl.Dock = DockStyle.Fill;
+            this.ResumeLayout(true);
         }
 
         private void createChildControl(RuleType ruleType)
